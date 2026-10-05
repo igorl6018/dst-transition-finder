@@ -1,6 +1,6 @@
 {
   "name": "dst-transition-finder",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Returns the exact datetimes when daylight saving time starts and ends for a given IANA timezone and year, including the direction of the transition.",
   "type": "module",
   "main": "src/index.js",
