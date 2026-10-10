@@ -27,3 +27,10 @@ The trade-off: results depend entirely on the ICU data bundled with your Node ru
 - Southern-hemisphere zones return fall-back first, then spring-forward, because their DST wraps the calendar year.
 - 30-minute DST offsets (Australia/Lord_Howe) are reported correctly.
 - Zones whose offset changed mid-year for non-DST reasons (e.g. Antarctica/Casey) are included: this library reports every offset discontinuity, not only those labelled 'DST' in zone metadata.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
